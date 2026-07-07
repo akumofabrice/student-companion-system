@@ -10,8 +10,8 @@ const goalRoutes = require('./routes/goalRoutes');
 const timetableRoutes = require('./routes/timetableRoutes');
 const forumRoutes = require('./routes/forumRoutes');
 const userRoutes = require('./routes/userRoutes');
-const dns = require ('dns/promises');
-dns.setServers(['8.8.8.8', '1.1.1.1']);
+// const dns = require ('dns/promises');
+// dns.setServers(['8.8.8.8', '1.1.1.1']);
 
 dotenv.config();
 connectDB();
@@ -20,7 +20,7 @@ const app = express();
 const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: process.env.CLIENT_URL || 'http://localhost:5173' || 'https://studywehl.vercel.app',
+    origin: process.env.CLIENT_URL ||  'https://studywehl.vercel.app',
     methods: ['GET', 'POST'],
   },
 });
